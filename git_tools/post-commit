@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "====SVN COMMIT BEGIN===="
+COMMITED_FILES_LIST=$(git log -1 --name-only --pretty='')
+LAST_COMMIT_COMMENT=$(git log -1 --pretty=%B)
+HOOKS_DIR_PATH="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_PATH=${HOOKS_DIR_PATH}/../..
+#echo "PROJECT_PATH ${PROJECT_PATH}"
+
+for COMMITED_FILE in ${COMMITED_FILES_LIST}
+do
+FILES_ABS_PATH_LIST="${FILES_ABS_PATH_LIST} ${PROJECT_PATH}/${COMMITED_FILE}"
+done;
+
+#echo "FILES: ${FILES_ABS_PATH_LIST}"
+#echo "HOOK MSG: ${LAST_COMMIT_COMMENT}"
+
+svn commit -m "${LAST_COMMIT_COMMENT}" ${FILES_ABS_PATH_LIST}
+echo "====SVN COMMIT END===="
