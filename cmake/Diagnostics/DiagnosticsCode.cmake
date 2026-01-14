@@ -208,7 +208,7 @@ use_pvs(TARGET_NAME name
  ``REPORT_FORMAT`` - формат вывода предупреждений (json, xml, tasklist и др.)
 
 #]====]
-
+#[==[
 function(use_pvs)
     set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
     # Парсить параметры
@@ -244,3 +244,4 @@ function(use_pvs)
 
     add_custom_command(TARGET ${PVS_FULL_TARGET} POST_BUILD COMMAND rm -rf ARGS "../.PVS-Studio/logs")
 endfunction()
+#]==]

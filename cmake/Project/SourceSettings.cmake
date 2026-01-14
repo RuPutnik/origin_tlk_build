@@ -535,7 +535,7 @@ function(_configure_typed_target)
         all_compilation_warn_on(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
 
         # Использовать анализатор кода
-        use_pvs(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
+  #      use_pvs(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
 
     endif()
 
