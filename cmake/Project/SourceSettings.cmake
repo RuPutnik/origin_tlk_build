@@ -529,7 +529,7 @@ function(_configure_typed_target)
         include(${_ABS_PATH_TO_SOURCE_SETTINGS}/../Diagnostics/DiagnosticsCode.cmake)
 
         # Использовать санитайзеры
-        use_sanitizers(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
+       # use_sanitizers(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
 
         # Включить все предупреждения
         all_compilation_warn_on(TARGET_NAME "${${_PREFIX}_TARGET_NAME}")
